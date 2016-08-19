@@ -1,0 +1,41 @@
+<div id="dashboard">
+	<div id="venue-column">
+		<div id="venue-header">Stage:</div>
+		{% for venue in site.data.venues %}
+			<div class="venue-tab">
+				<div class="top-row clearfix">
+					<div class="play-button-holder">
+						<div class="play-button">&raquo;</div>
+					</div>
+					<div class="venue-info">
+						<p class="name-id">{{venue.name}} <span> &nbsp;{{venue.id}}</span></p>
+						<p class="state-badges">
+							<span class="device-type">{{venue.device}}</span>
+							<span class="server-state {{venue.server-state}}">{{venue.server-state}}</span>
+							<span class="device-type {{venue.talk-state}}">{{venue.talk-state}}</span>
+						</p>
+					</div>
+				</div>
+				<div class="bottom-row clearfix">
+					<p class="small-6 columns float-left no-pad">
+						<span class="server-status {{venue.server-state}}"></span>
+						<span class="server-heartbeat {{venue.server-state}}"></span>
+					</p>
+					<p class="small-6 columns float-right no-pad">
+						<span class="connection-status {{venue.server-state}}"></span>
+						<span class="box-heartbeat {{venue.box}}"></span>
+					</p>
+					
+				</div>
+			</div>
+			
+		{% endfor %}
+	</div>
+	<div id="timeline-column">
+		<div id="current-time-holder">
+			<div id="current-time-badge">14:35:05</div>
+		</div>
+		<div id="timeline-header">11:00</div>
+		<div id="current-time-line"></div>
+	</div>
+</div>

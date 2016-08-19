@@ -1,0 +1,23 @@
+- name: sophie-glaser
+  id: i-065618ba
+  device: butt
+  server-state: connected
+  talk-state: live
+  connection: yes
+  box: no
+- name: leipziger-buchmesse
+  id: i-8dhskjh3
+  device: gandor
+  server-state: connected
+  talk-state: live
+  connection: yes
+  box: yes
+- name: voice-republic-testing
+  id: i-e0f2bd5c
+  device: kant
+  server-state: awaiting-stream
+  talk-state: offline
+  connection: no
+  box: yes
+
+  
