@@ -1,41 +1,82 @@
+<div id="time-grid">
+	{% for marker in site.data.markers %}
+		<div class="marker">{{marker.time}}</div>
+		<div class="marker half"></div>
+	{% endfor %}
+	<div class="venue-timeslots">
+		<div class="venue-timeslot-row">
+		<div class="point-in-time" style="margin-left: 450px"></div>
+			<div class="time-slot-holder" style="margin-left: 400px;">
+				<p class="time-slot-title">This is a talky talk</p>
+				<div class="time-slot-fill"></div>
+				<div class="time-slot">
+				</div>
+			</div>
+		</div>
+		<div class="venue-timeslot-row">
+			<div class="time-slot-holder" style="margin-left: 800px;">
+				<p class="time-slot-title">This is really awesome</p>
+				<!-- <div class="time-slot-fill"></div> -->
+				<div class="time-slot">
+				</div>
+			</div>
+		</div>
+		<div class="venue-timeslot-row">
+			<div class="time-slot-holder" style="margin-left: 200px;">
+				<p class="time-slot-title">Funny Porcelain Handpuppet</p>
+				<div class="time-slot-fill"></div>
+				<div class="time-slot">
+				</div>
+				<div class="time-slot-holder" style="margin-left: 400px;">
+				<p class="time-slot-title">Gagnly Steel Kerchiefs</p>
+				<div class="time-slot-fill" style="width: 102px;"></div>
+				<div class="time-slot">
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="current-time-line"></div>
+	<div id="current-time-holder">
+		<div id="current-time-badge">11:46:05</div>
+	</div>
+</div>
 <div id="dashboard">
 	<div id="venue-column">
-		<div id="venue-header">Stage:</div>
+		<!-- <div id="venue-header"></div> -->
 		{% for venue in site.data.venues %}
 			<div class="venue-tab">
 				<div class="top-row clearfix">
 					<div class="play-button-holder">
-						<div class="play-button">&raquo;</div>
-					</div>
-					<div class="venue-info">
-						<p class="name-id">{{venue.name}} <span> &nbsp;{{venue.id}}</span></p>
-						<p class="state-badges">
-							<span class="device-type">{{venue.device}}</span>
-							<span class="server-state {{venue.server-state}}">{{venue.server-state}}</span>
-							<span class="device-type {{venue.talk-state}}">{{venue.talk-state}}</span>
-						</p>
-					</div>
+					<button class="play-button"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sound_on"></use></svg></button>
 				</div>
-				<div class="bottom-row clearfix">
-					<p class="small-6 columns float-left no-pad">
-						<span class="server-status {{venue.server-state}}"></span>
-						<span class="server-heartbeat {{venue.server-state}}"></span>
+				<div class="venue-info">
+					<p class="name-id">{{venue.name}} <span> &nbsp;{{venue.id}}</span></p>
+					<p class="state-badges">
+						<span class="device-type">{{venue.device}}</span>
+						<span class="server-state {{venue.server-state}}">{{venue.server-state}}</span>
+						<span class="device-type {{venue.talk-state}}">{{venue.talk-state}}</span>
 					</p>
-					<p class="small-6 columns float-right no-pad">
-						<span class="connection-status {{venue.server-state}}"></span>
-						<span class="box-heartbeat {{venue.box}}"></span>
-					</p>
-					
 				</div>
 			</div>
-			
-		{% endfor %}
-	</div>
-	<div id="timeline-column">
-		<div id="current-time-holder">
-			<div id="current-time-badge">14:35:05</div>
+			<div class="bottom-row clearfix">
+				<p class="small-6 columns float-left no-pad">
+					<span class="small-2 float-left columns server-status no-pad {{venue.server-state}}"></span>
+					<span class="small-10 float-right columns server-heartbeat no-pad {{venue.server-state}}"></span>
+				</p>
+				<p class="small-6 columns float-right no-pad">
+					<span class="small-2 float-left columns connection-status no-pad {{venue.server-state}}"></span>
+					<span class="small-10 float-right columns box-heartbeat no-pad {{venue.box}}"></span>
+				</p>
+				
+			</div>
 		</div>
-		<div id="timeline-header">11:00</div>
-		<div id="current-time-line"></div>
-	</div>
+		
+	{% endfor %}
+</div>
+<!-- <div id="timeline-column">
+	
+	<div id="timeline-header">&nbsp;</div>
+</div> -->
 </div>

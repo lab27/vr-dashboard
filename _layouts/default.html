@@ -4,14 +4,15 @@
   {% include head.html %}
 
   <body>
-
+{% include svg_defs.html %}
 
       <main>
         {{ content }}
       </main>
 
   <script src="{{site.github.url}}/js/foundation.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script> -->
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
   <script src="{{site.github.url}}/js/app.js"></script>
   <script>
